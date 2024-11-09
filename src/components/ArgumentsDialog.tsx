@@ -23,6 +23,7 @@ export const ArgumentsDialog = ({ data }: ArgumentsDialogProps) => {
         fullWidth
         size="large"
         onClick={() => setOpen(true)}
+        sx={{ height: 70, borderRadius: 5 }}
       >
         See arguments!
       </Button>

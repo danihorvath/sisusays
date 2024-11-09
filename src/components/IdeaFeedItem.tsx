@@ -1,4 +1,5 @@
 import {
+  Box,
   Card,
   CardActions,
   CardContent,
@@ -41,21 +42,19 @@ export const IdeaFeedItem = ({ data }: IdeaFeedItemProps) => {
             gap: 1,
           }}
         >
-          <Typography variant="h5">
+          <Box display="flex" gap={0.5}>
             <Chip
               label="Idea"
               sx={{ position: "inline", mr: 1 }}
-              size="small"
               color="success"
             />
             <Chip
               label="Under Discussion"
               sx={{ position: "inline", mr: 1 }}
-              size="small"
               color="primary"
             />
-            {data.title}
-          </Typography>
+          </Box>
+          <Typography variant="h4">{data.title}</Typography>
           <Typography>{data.description}</Typography>
         </CardContent>
 

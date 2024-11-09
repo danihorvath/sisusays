@@ -1,5 +1,6 @@
 import { ThumbDown, ThumbUp } from "@mui/icons-material";
 import {
+  Box,
   Button,
   Card,
   CardActions,
@@ -50,21 +51,19 @@ export const FeedItem = ({ data, nextSlide }: FeedItemProps) => {
             gap: 1,
           }}
         >
-          <Typography variant="h5">
+          <Box display="flex" gap={0.5}>
             <Chip
               label="Topic"
               sx={{ position: "inline", mr: 1 }}
-              size="small"
               color="warning"
             />
             <Chip
               label="Under Discussion"
               sx={{ position: "inline", mr: 1 }}
-              size="small"
               color="primary"
             />
-            {data.title}
-          </Typography>
+          </Box>
+          <Typography variant="h4">{data.title}</Typography>
           <Typography>{data.description}</Typography>
         </CardContent>
 
@@ -76,6 +75,7 @@ export const FeedItem = ({ data, nextSlide }: FeedItemProps) => {
             fullWidth
             size="large"
             onClick={nextSlide}
+            sx={{ height: 70, borderRadius: 5 }}
           >
             {isMobile && "Not interested"}
           </Button>
@@ -88,6 +88,7 @@ export const FeedItem = ({ data, nextSlide }: FeedItemProps) => {
             onClick={() => {
               navigate(`/${params.scope ?? "finland"}/${data.id}`);
             }}
+            sx={{ height: 70, borderRadius: 5 }}
           >
             {isMobile && "Go to discussion"}
           </Button>
