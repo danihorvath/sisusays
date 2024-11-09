@@ -21,7 +21,7 @@ export const NewTopic = () => {
   };
   return (
     <>
-      <Button onClick={handleClickOpen} variant="outlined" color="warning">
+      <Button onClick={handleClickOpen} variant="contained" color="secondary">
         New topic
       </Button>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">

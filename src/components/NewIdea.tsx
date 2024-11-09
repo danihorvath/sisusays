@@ -21,7 +21,7 @@ export const NewIdea = () => {
   };
   return (
     <>
-      <Button onClick={handleClickOpen} variant="outlined" color="success">
+      <Button onClick={handleClickOpen} variant="contained" color="secondary">
         New idea
       </Button>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
