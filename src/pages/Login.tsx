@@ -10,8 +10,8 @@ const Login = () => {
     defaultValues: { identifier: "", password: "" },
   });
 
-  const onSubmit: SubmitHandler<AuthRequest> = (values) => {
-    authMutation.mutate(values);
+  const onSubmit: SubmitHandler<AuthRequest> = () => {
+    authMutation.mutate();
   };
 
   return (
