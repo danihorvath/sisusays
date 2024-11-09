@@ -1,7 +1,7 @@
 import { Avatar, Box, Button } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import { Logo } from "@/components/Logo";
 import { useAuthQuery, useLogout } from "@/queries/Auth";
+import { Menu } from "./Menu";
 
 export const HEADER_HEIGHT = 100;
 
@@ -23,9 +23,8 @@ export const Header = () => {
       top={0}
       zIndex={10}
     >
-      <RouterLink to="/">
-        <Logo height={300} />
-      </RouterLink>
+      <Menu />
+      <RouterLink to="/">{/* <Logo height={300} /> */}</RouterLink>
       {data && (
         <Box display="flex" alignItems="center" gap={2}>
           <Button color="inherit" variant="text" onClick={logout}>
