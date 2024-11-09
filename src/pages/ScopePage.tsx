@@ -25,7 +25,7 @@ export const scopes = [
   },
   {
     name: "Tallberginkatu 1 C",
-    type: "Apartment building",
+    type: "Apartment",
     slug: "tallberginkatu-1-c",
   },
 ];

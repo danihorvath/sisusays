@@ -22,22 +22,17 @@ export const FeedItem = ({ data }: FeedItemProps) => {
   const params = useParams();
 
   return (
-    <Container sx={{ height: "100%" }}>
-
+    <Container sx={{ height: "100%", py: 3 }}>
       <Card
-        elevation={10}
+        elevation={8}
         sx={{
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          p: 4,
-          marginBottom: 10,
-          borderRadius: 30,
+
+          borderRadius: 5,
         }}
       >
-        {/* Unimportant Button */}
-
-        {/* Child content in the center */}
         <CardContent
           sx={{
             flexGrow: 1,
@@ -46,13 +41,13 @@ export const FeedItem = ({ data }: FeedItemProps) => {
             gap: 1,
           }}
         >
-          <Typography variant="h4">{data.title}</Typography>
+          <Typography variant="h5" lineHeight={1}>
+            {data.title}
+          </Typography>
           <Typography>{data.description}</Typography>
         </CardContent>
 
-        {/* Important Button */}
-
-        <CardActions>
+        <CardActions sx={{ p: 3 }}>
           <Button
             variant="contained"
             color="error"
@@ -76,6 +71,6 @@ export const FeedItem = ({ data }: FeedItemProps) => {
           </Button>
         </CardActions>
       </Card>
-    </Container >
+    </Container>
   );
 };
