@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { RegisterScopeForm } from "./RegisterScopeForm";
+import { NewTopicForm } from "./NewTopicForm";
 
 export const NewTopic = () => {
   const [open, setOpen] = useState(false);
@@ -25,30 +25,24 @@ export const NewTopic = () => {
         New topic
       </Button>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
-        <DialogTitle>Register a new scope</DialogTitle>
+        <DialogTitle>Add a new topic</DialogTitle>
         <DialogContent
           sx={{ gap: 2, display: "flex", flexDirection: "column" }}
         >
           <DialogContentText>
             <Typography>
-              Create a new scope of contributors and empower your
-              decision-making process.
+              Create a new topic to start a conversation and gather opinions.
             </Typography>
             <Typography>
-              Define who will be involved in shaping the conversation and
-              guiding the decisions.
-            </Typography>
-            <Typography>
-              Whether it's a group of experts, community leaders, or voters, you
-              can tailor the scope to include the right voices. Let's make
-              democracy more inclusive and dynamic!
+              Topics can be about anything, from local issues to global
+              challenges.
             </Typography>
           </DialogContentText>
-          <RegisterScopeForm />
+          <NewTopicForm handleClose={handleClose} />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button type="submit" variant="contained">
+          <Button onClick={handleClose} type="submit" variant="contained">
             Power up our Democracy!
           </Button>
         </DialogActions>

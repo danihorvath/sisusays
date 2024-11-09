@@ -47,7 +47,7 @@ export const NewScope = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button type="submit" variant="contained">
+          <Button onClick={handleClose} type="submit" variant="contained">
             Power up our Democracy!
           </Button>
         </DialogActions>
