@@ -53,14 +53,83 @@ export const topics = [
   },
   {
     id: 4,
-    title: "Mental Health Services",
+    title: "Cleaner School Toilets",
     description:
-      "Mental health is a huge issue, especially for young people. How can Finland improve mental health services so everyone gets the help they need?",
+      "Anytime the school toilets are polluted and have a bad smell. We want them clean!",
+      ideas:  
+            [
+              {
+                "title": "Regular Cleaning",
+                "description": "Schedule regular cleaning sessions.",
+                "pro": ["Hygienic", "Consistent", "Professional"],
+                "con": ["Costly", "Time-consuming", "Requires staff"]
+              },
+              {
+                "title": "Air Fresheners",
+                "description": "Install automatic air fresheners.",
+                "pro": ["Affordable", "Easy", "Effective"],
+                "con": ["Temporary", "Chemical use", "Maintenance"]
+              },
+              {
+                "title": "Student Patrol",
+                "description": "Create a student patrol for cleanliness.",
+                "pro": ["Engaging", "Educational", "Cost-effective"],
+                "con": ["Inconsistent", "Responsibility", "Supervision"]
+              },
+              {
+                "title": "Awareness Campaign",
+                "description": "Run a cleanliness awareness campaign.",
+                "pro": ["Educational", "Community-driven", "Long-term"],
+                "con": ["Initial effort", "Participation", "Follow-up"]
+              },
+              {
+                "title": "Better Ventilation",
+                "description": "Improve ventilation systems.",
+                "pro": ["Effective", "Long-term", "Healthier"],
+                "con": ["Costly", "Installation", "Maintenance"]
+              },
+              {
+                "title": "Cleaning Supplies",
+                "description": "Provide ample cleaning supplies.",
+                "pro": ["Accessible", "Encouraging", "Immediate"],
+                "con": ["Restocking", "Usage", "Cost"]
+              },
+              {
+                "title": "Feedback System",
+                "description": "Implement a feedback system for issues.",
+                "pro": ["Responsive", "Engaging", "Improvement"],
+                "con": ["Monitoring", "Implementation", "Response time"]
+              },
+              {
+                "title": "Professional Service",
+                "description": "Hire a professional cleaning service.",
+                "pro": ["Thorough", "Reliable", "Expertise"],
+                "con": ["Expensive", "Scheduling", "Dependence"]
+              },
+              {
+                "title": "Eco-friendly Products",
+                "description": "Use eco-friendly cleaning products.",
+                "pro": ["Safe", "Sustainable", "Effective"],
+                "con": ["Cost", "Availability", "Effectiveness"]
+              },
+              {
+                "title": "Student Incentives",
+                "description": "Offer incentives for cleanliness.",
+                "pro": ["Motivating", "Engaging", "Positive"],
+                "con": ["Cost", "Fairness", "Sustainability"]
+              }
+            ],
   },
   {
     id: 5,
     title: "Better Internet in Rural Finland",
     description:
       "People in small towns are stuck with slow internet, while the cities get all the fast connections. How do we make sure everyone has good internet, no matter where they live?",
+  },
+  {
+    id: 4,
+    title: "Mental Health Services",
+    description:
+      "Mental health is a huge issue, especially for young people. How can Finland improve mental health services so everyone gets the help they need?",
   },
 ];
