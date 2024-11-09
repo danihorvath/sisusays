@@ -32,3 +32,5 @@ export const Feed = () => {
     </Swiper>
   );
 };
+export { topics };
+

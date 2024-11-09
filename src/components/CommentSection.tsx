@@ -1,4 +1,4 @@
-import { Box, Button, List, ListItem, TextField, Typography } from "@mui/material";
+import { Box, Button, List, ListItem, TextField } from "@mui/material";
 import { useState } from "react";
 
 interface CommentSectionProps {
@@ -17,15 +17,15 @@ export const CommentSection = ({ comments, addComment }: CommentSectionProps) =>
   };
 
   return (
-    <Box sx={{ mt: 3 }}>
-      <Typography variant="h6" sx={{ marginBottom: 2 }}>
-        Comments
-      </Typography>
+    <Box>
+      {/* <Typography variant="h6">
+        Add Argument
+      </Typography> */}
       <List
         sx={{
           borderRadius: "4px",
-          padding: "8px",
-          marginBottom: "8px",
+          // px: "8px",
+          // marginBottom: "8px",
           bgcolor: "background.paper",
           maxHeight: 300,
           overflow: "auto",
@@ -37,7 +37,7 @@ export const CommentSection = ({ comments, addComment }: CommentSectionProps) =>
               sx={{
                 border: "1px solid #ccc",
                 borderRadius: "4px",
-                padding: "8px",
+                // padding: "8px",
                 width: "100%",
                 backgroundColor: "#f9f9f9",
               }}
@@ -48,9 +48,9 @@ export const CommentSection = ({ comments, addComment }: CommentSectionProps) =>
         ))}
       </List>
 
-      <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
+      <Box sx={{ display: "flex" }}>
         <TextField
-          label="Add a comment"
+          label="Add Argument"
           variant="outlined"
           size="small"
           fullWidth

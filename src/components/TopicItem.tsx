@@ -1,4 +1,4 @@
-import { Container, Card, CardContent } from "@mui/material";
+import { Container, Card, CardContent, Typography, Box } from "@mui/material";
 import { useState } from "react";
 import { CommentSection } from "@/components/CommentSection.tsx";
 import { IdeaFeed } from "./IdeaFeed";
@@ -31,18 +31,40 @@ export const TopicItem = () => {
 
       <Card
         sx={{
-          height: "auto",
-          flexDirection: "column",
-          border: "2px solid #ccc",
-        }}
-      >
-        <CardContent
-          sx={{ flexGrow: 1, display: "flex", flexDirection: "column", gap: 1 }}
-        >
+          display: "flex",
+          mt: 7,
+          mb: 10,
+          pb: 5,
+        }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: 250,
+            height: 100,
+            alignItems: "center",
+          }}>
+          <Typography>Pro</Typography>
+
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: 250,
+            height: 100,
+            alignItems: "center",
+          }}>
+          <Typography>Con</Typography>
+        </Box>
+      </Card>
+
+      <Card sx={{ height: "auto", flexDirection: "column", border: "2px solid #ccc" }}>
+        <CardContent sx={{ flexGrow: 1, display: "flex", bottom: 10, flexDirection: "column", height: 65, justifyContent: "center" }}>
           {/* Comment Section */}
           <CommentSection comments={comments} addComment={addComment} />
         </CardContent>
       </Card>
-    </Container>
+    </Container >
   );
 };
