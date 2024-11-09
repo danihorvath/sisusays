@@ -54,7 +54,7 @@ export const useAuthQuery = () =>
   useQuery({
     queryKey: ["auth"],
     queryFn: () => {
-      return axiosInstance.get("/users/me") as Promise<User>;
+      return axiosInstance.get("/users/me?populate=*") as Promise<User>;
     },
     retry: 0,
     refetchOnMount: false,
