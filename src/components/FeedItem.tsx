@@ -11,6 +11,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 interface FeedItemProps {
   data: {
+    id: number;
     title: string;
     description: string;
   };
