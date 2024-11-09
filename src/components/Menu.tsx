@@ -23,7 +23,8 @@ export const Menu = () => {
     setAnchorEl(null);
   };
 
-  const selectedScope = scopes.find((v) => v.slug === params.scope);
+  const selectedScope =
+    scopes.find((v) => v.slug === params.scope) || scopes[0];
 
   return (
     <>
