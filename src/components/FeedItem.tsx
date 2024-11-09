@@ -29,9 +29,9 @@ export const FeedItem = ({ data, nextSlide }: FeedItemProps) => {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-
           borderRadius: 5,
         }}
+        elevation={0}
       >
         <CardContent
           sx={{
