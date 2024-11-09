@@ -23,6 +23,7 @@ export const Header = () => {
       position="sticky"
       top={0}
       zIndex={10}
+      mb={2}
     >
       <Menu />
       <RouterLink to="/">{/* <Logo height={300} /> */}</RouterLink>
@@ -34,7 +35,9 @@ export const Header = () => {
           </Button>
 
           <Box display="flex" alignItems="center" gap={1}>
-          <RouterLink to="/profile"><Avatar /></RouterLink>
+            <RouterLink to="/profile">
+              <Avatar />
+            </RouterLink>
           </Box>
         </Box>
       )}

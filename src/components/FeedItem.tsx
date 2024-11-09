@@ -1,47 +1,64 @@
 import { ThumbDown, ThumbUp } from "@mui/icons-material";
-import { Box, Button } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Container,
+  Typography,
+} from "@mui/material";
 
 interface FeedItemProps {
   data: {
     title: string;
+    description: string;
   };
 }
 
 export const FeedItem = ({ data }: FeedItemProps) => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-between", // Distribute children horizontally
-        alignItems: "center", // Vertically center items
-        border: "1px solid #ccc",
-        padding: "10px",
-        marginBottom: "10px",
-        borderRadius: "8px",
-      }}
-    >
-      {/* Unimportant Button */}
-      <Button variant="contained" color="error" startIcon={<ThumbDown />}>
-        Unimportant
-      </Button>
-
-      {/* Child content in the center */}
-      <Box
-        sx={{
-          flexGrow: 1,
-          textAlign: "center",
-          fontSize: "25px",
-          maxWidth: "40%",
-          overflow: "hidden",
-        }}
+    <Container sx={{ height: "100%" }}>
+      <Card
+        sx={{ height: "100%", display: "flex", flexDirection: "column", p: 2 }}
       >
-        {data.title}
-      </Box>
+        {/* Unimportant Button */}
 
-      {/* Important Button */}
-      <Button variant="contained" color="success" endIcon={<ThumbUp />}>
-        Important
-      </Button>
-    </Box>
+        {/* Child content in the center */}
+        <CardContent
+          sx={{
+            flexGrow: 1,
+            display: "flex",
+            flexDirection: "column",
+            gap: 1,
+          }}
+        >
+          <Typography variant="h4">{data.title}</Typography>
+          <Typography>{data.description}</Typography>
+        </CardContent>
+
+        {/* Important Button */}
+
+        <CardActions>
+          <Button
+            variant="contained"
+            color="error"
+            startIcon={<ThumbDown />}
+            fullWidth
+            size="large"
+          >
+            Unimportant
+          </Button>
+          <Button
+            variant="contained"
+            color="success"
+            endIcon={<ThumbUp />}
+            fullWidth
+            size="large"
+          >
+            Important
+          </Button>
+        </CardActions>
+      </Card>
+    </Container>
   );
 };

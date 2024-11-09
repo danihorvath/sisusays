@@ -1,32 +1,50 @@
-import { Box } from "@mui/material";
 import { FeedItem } from "./FeedItem";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
 
 export const Feed = () => {
   const topics = [
-    "Topic 1",
-    "Topic 2",
-    "Some very long text that will get truncated with an ellipsis when it overflows beyond the max width of the container. This text is really long and should be cut off.",
-    "Topic 4",
+    {
+      title: "Making Public Transport Work for Everyone",
+      description:
+        "How can we improve public transportation in rural areas to ensure all Finns have access to reliable transport?",
+    },
+    {
+      title:
+        "Helsinki rents are crazy expensive. How do we fix the housing crisis and make sure everyone can afford a place to live?",
+      description:
+        "Helsinki rents are crazy expensive. How do we fix the housing crisis and make sure everyone can afford a place to live?",
+    },
+    {
+      title: "Universal Basic Income",
+      description:
+        "What if everyone got free money from the government every month? Is Finland ready to try this for real?",
+    },
+    {
+      title: "Mental Health Services",
+      description:
+        "Mental health is a huge issue, especially for young people. How can Finland improve mental health services so everyone gets the help they need?",
+    },
+    {
+      title: "Better Internet in Rural Finland",
+      description:
+        "People in small towns are stuck with slow internet, while the cities get all the fast connections. How do we make sure everyone has good internet, no matter where they live?",
+    },
   ];
   return (
-    <Box
-      sx={{
-        textAlign: "center",
-        width: "60%", // 60% of the screen width
-        maxWidth: "800px", // Optional: Maximum width
-        margin: "0 auto", // Centering the box
-        padding: "20px", // Some padding inside
-        boxSizing: "border-box",
-        "@media (max-width: 768px)": {
-          width: "100%", // Full width for small screens
-          borderLeft: 0,
-          borderRight: 0,
-        },
-      }}
+    <Swiper
+      slidesPerView={1}
+      onSlideChange={() => console.log("slide change")}
+      onSwiper={(swiper) => console.log(swiper)}
+      direction={"vertical"}
+      style={{ height: "100%" }}
     >
-      {topics.map((title, index) => (
-        <FeedItem key={index} data={{ title }} />
+      {topics.map((data, index) => (
+        <SwiperSlide key={index}>
+          <FeedItem data={data} />
+        </SwiperSlide>
       ))}
-    </Box>
+    </Swiper>
   );
 };

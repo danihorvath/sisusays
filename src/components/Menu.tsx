@@ -2,14 +2,14 @@ import {
   IconButton,
   Menu as MuiMenu,
   MenuItem,
-  Typography,
   Tooltip,
   Box,
+  Link,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import { scopes } from "@/pages/ScopePage";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link as RouterLink } from "react-router-dom";
 
 export const Menu = () => {
   const params = useParams();
@@ -34,12 +34,17 @@ export const Menu = () => {
             <MenuIcon sx={{ fontSize: 30 }} />
           </Tooltip>
         </IconButton>
-
-        <Typography variant="h6" component="div">
+        <Link
+          component={RouterLink}
+          to={`/${selectedScope.slug}`}
+          color="secondary"
+          underline="none"
+          variant="h6"
+        >
           {selectedScope
             ? `${selectedScope.name} (${selectedScope.type})`
             : "NOT FOUND"}
-        </Typography>
+        </Link>
       </Box>
       <MuiMenu
         id="long-menu"

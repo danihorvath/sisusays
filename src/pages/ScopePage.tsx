@@ -37,11 +37,12 @@ export const ScopePage = () => {
     scopes.find((v) => v.slug === params.scope) || scopes[0];
 
   return (
-    <Container>
-      <Typography variant="subtitle1">Democracy of its best in</Typography>
-      <Typography variant="h3">{selectedScope.name}</Typography>
-
+    <>
+      <Container sx={{ mb: 3 }}>
+        <Typography variant="subtitle1">Democracy of its best in</Typography>
+        <Typography variant="h3">{selectedScope.name}</Typography>
+      </Container>
       <Feed />
-    </Container>
+    </>
   );
 };

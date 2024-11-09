@@ -4,11 +4,9 @@ import { Header } from "@/components/Header";
 
 export const Layout = () => {
   return (
-    <Box display="flex" flexDirection="column" minHeight="100dvh">
+    <Box display="flex" flexDirection="column" height="100dvh" pb={3}>
       <Header />
-      <Box my={3}>
-        <Outlet />
-      </Box>
+      <Outlet />
     </Box>
   );
 };
