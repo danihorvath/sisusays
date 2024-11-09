@@ -33,19 +33,18 @@ export const MenuMobileLogin = () => {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        slotProps={{
-          paper: {},
-        }}
+        keepMounted
       >
         <MenuItem>
           <RouterLink
             style={{ textDecoration: "none", color: "black" }}
             to="/profile"
+            onClick={handleClose}
           >
             Profile
           </RouterLink>
         </MenuItem>
-        <NewScope />
+        <NewScope onClick={handleClose} />
         <MenuItem onClick={logout}>Logout</MenuItem>
       </MuiMenu>
     </>

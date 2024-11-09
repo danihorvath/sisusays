@@ -11,10 +11,15 @@ import {
 import { useState } from "react";
 import { RegisterScopeForm } from "./RegisterScopeForm";
 
-export const NewScope = () => {
+interface NewScopeProps {
+  onClick: () => void;
+}
+
+export const NewScope = ({ onClick }: NewScopeProps) => {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
+    onClick();
     setOpen(true);
   };
   const handleClose = () => {
