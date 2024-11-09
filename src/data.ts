@@ -32,30 +32,10 @@ export const scopes = [
 ];
 
 export const topics = [
-  {
+    {
     id: 1,
-    title: "Making Public Transport Work for Everyone",
-    description:
-      "How can we improve public transportation in rural areas to ensure all Finns have access to reliable transport?",
-  },
-  {
-    id: 2,
-    title:
-      "Helsinki rents are crazy expensive. How do we fix the housing crisis and make sure everyone can afford a place to live?",
-    description:
-      "Helsinki rents are crazy expensive. How do we fix the housing crisis and make sure everyone can afford a place to live?",
-  },
-  {
-    id: 3,
-    title: "Universal Basic Income",
-    description:
-      "What if everyone got free money from the government every month? Is Finland ready to try this for real?",
-  },
-  {
-    id: 4,
     title: "Cleaner School Toilets",
-    description:
-      "Anytime the school toilets are polluted and have a bad smell. We want them clean!",
+    description: "Anytime the school toilets are polluted and have a bad smell. We want them clean!",
       ideas:  
             [
               {
@@ -121,15 +101,79 @@ export const topics = [
             ],
   },
   {
-    id: 5,
-    title: "Better Internet in Rural Finland",
+    id: 2,
+    title: "Solar Panels on the Roof",
     description:
-      "People in small towns are stuck with slow internet, while the cities get all the fast connections. How do we make sure everyone has good internet, no matter where they live?",
+      "Install solar panels on the school roof to generate renewable energy and reduce electricity costs.",
+    ideas: [
+      {
+        title: "Energy Savings",
+        description: "Generate electricity to reduce energy bills.",
+        pro: ["Cost-effective", "Sustainable", "Long-term savings"],
+        con: ["Initial investment", "Maintenance", "Weather-dependent"]
+      },
+      {
+        title: "Educational Opportunities",
+        description: "Use solar panels as a learning tool for students.",
+        pro: ["Educational", "Engaging", "Real-world application"],
+        con: ["Curriculum integration", "Training", "Time-consuming"]
+      },
+      {
+        title: "Environmental Impact",
+        description: "Reduce the school's carbon footprint.",
+        pro: ["Eco-friendly", "Positive impact", "Community leadership"],
+        con: ["Initial cost", "Installation", "Regulatory approvals"]
+      },
+      {
+        title: "Government Incentives",
+        description: "Take advantage of government incentives for renewable energy.",
+        pro: ["Financial support", "Encouraging", "Cost reduction"],
+        con: ["Application process", "Eligibility", "Compliance"]
+      },
+      {
+        title: "Energy Independence",
+        description: "Increase the school's energy independence.",
+        pro: ["Reliable", "Self-sufficient", "Resilient"],
+        con: ["Initial setup", "System management", "Backup needed"]
+      }
+    ]
   },
   {
-    id: 4,
-    title: "Mental Health Services",
+    id: 3,
+    title: "Magazine Club",
     description:
-      "Mental health is a huge issue, especially for young people. How can Finland improve mental health services so everyone gets the help they need?",
+      "Start a magazine club where students can create and publish their own magazine.",
+    ideas: [
+      {
+        title: "Creative Outlet",
+        description: "Provide a platform for students to express their creativity.",
+        pro: ["Engaging", "Educational", "Fun"],
+        con: ["Time-consuming", "Resource-intensive", "Supervision needed"]
+      },
+      {
+        title: "Skill Development",
+        description: "Help students develop writing, editing, and design skills.",
+        pro: ["Skill-building", "Practical experience", "Collaborative"],
+        con: ["Training required", "Commitment", "Resource allocation"]
+      },
+      {
+        title: "Community Building",
+        description: "Foster a sense of community and teamwork among students.",
+        pro: ["Inclusive", "Supportive", "Social"],
+        con: ["Group dynamics", "Conflict resolution", "Coordination"]
+      },
+      {
+        title: "Publication Experience",
+        description: "Give students real-world experience in publishing.",
+        pro: ["Professional", "Insightful", "Valuable"],
+        con: ["Deadlines", "Pressure", "Quality control"]
+      },
+      {
+        title: "School Promotion",
+        description: "Use the magazine to promote school events and achievements.",
+        pro: ["Informative", "Promotional", "Engaging"],
+        con: ["Content creation", "Approval process", "Distribution"]
+      }
+    ]
   },
 ];
