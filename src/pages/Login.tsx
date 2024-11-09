@@ -42,7 +42,6 @@ const Login = () => {
                           size="small"
                           fullWidth
                           label="Citizen ID"
-                          type="password"
                         />
                       )}
                     />
