@@ -16,10 +16,9 @@ export const Feed = () => {
   return (
     <Swiper
       ref={swiperRef}
-      slidesPerView={1.2}
+      slidesPerView={1.1}
       direction={"vertical"}
       loop
-      centeredSlides
       style={{ width: "100%", height: "100%" }}
     >
       {topics.map((data, index) => (
