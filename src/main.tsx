@@ -13,6 +13,7 @@ import QueryProvider from "@/providers/QueryProvider";
 import ThemeProvider from "@/providers/ThemeProvider";
 import UserProfile from "@/pages/UserProfile";
 import { ScopePage } from "./pages/ScopePage";
+import { TopicPage } from "./pages/TopicPage";
 
 const router = createBrowserRouter([
   {
@@ -31,9 +32,13 @@ const router = createBrowserRouter([
             element: <ScopePage />,
           },
           {
+            path: "/:scope/:topic",
+            element: <TopicPage />,
+          },
+          {
             path: "/profile",
             element: <UserProfile />,
-          }
+          },
         ],
       },
       {

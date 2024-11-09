@@ -7,7 +7,10 @@ import { AuthRequest, useAuthMutation } from "@/queries/Auth";
 const Login = () => {
   const authMutation = useAuthMutation();
   const { control, handleSubmit } = useForm<AuthRequest>({
-    defaultValues: { identifier: "", password: "" },
+    defaultValues: {
+      identifier: "DEMOGR8435JGH54",
+      password: "DEMOGR8435JGH54",
+    },
   });
 
   const onSubmit: SubmitHandler<AuthRequest> = () => {

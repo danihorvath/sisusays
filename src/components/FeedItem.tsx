@@ -7,6 +7,7 @@ import {
   Container,
   Typography,
 } from "@mui/material";
+import { useNavigate, useParams } from "react-router-dom";
 
 interface FeedItemProps {
   data: {
@@ -16,6 +17,9 @@ interface FeedItemProps {
 }
 
 export const FeedItem = ({ data }: FeedItemProps) => {
+  const navigate = useNavigate();
+  const params = useParams();
+
   return (
     <Container sx={{ height: "100%" }}>
       <Card
@@ -54,6 +58,9 @@ export const FeedItem = ({ data }: FeedItemProps) => {
             endIcon={<ThumbUp />}
             fullWidth
             size="large"
+            onClick={() => {
+              navigate(`/${params.scope ?? "finland"}/${data.id}`);
+            }}
           >
             Important
           </Button>
