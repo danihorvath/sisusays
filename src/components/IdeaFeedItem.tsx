@@ -44,13 +44,13 @@ export const IdeaFeedItem = ({ data }: IdeaFeedItemProps) => {
         >
           <Box display="flex" gap={0.5}>
             <Chip
-              label="Idea"
-              sx={{ position: "inline", mr: 1 }}
+              label="💡 Idea"
+              sx={{ position: "inline", mr: 1, fontSize: 15 }}
               color="success"
             />
             <Chip
-              label="Under Discussion"
-              sx={{ position: "inline", mr: 1 }}
+              label="🕒 Under Discussion"
+              sx={{ position: "inline", mr: 1, fontSize: 15 }}
               color="primary"
             />
           </Box>

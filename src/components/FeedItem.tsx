@@ -54,12 +54,12 @@ export const FeedItem = ({ data, nextSlide }: FeedItemProps) => {
           <Box display="flex" gap={0.5}>
             <Chip
               label="Topic"
-              sx={{ position: "inline", mr: 1 }}
+              sx={{ position: "inline", mr: 1, fontSize: 15 }}
               color="warning"
             />
             <Chip
-              label="Under Discussion"
-              sx={{ position: "inline", mr: 1 }}
+              label="🕒 Under Discussion"
+              sx={{ position: "inline", mr: 1, fontSize: 15 }}
               color="primary"
             />
           </Box>
