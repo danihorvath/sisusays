@@ -1,6 +1,7 @@
-import { Container, Card, CardContent, Typography } from "@mui/material";
+import { Container, Card, CardContent } from "@mui/material";
 import { useState } from "react";
-import { CommentSection } from "@/components/CommentSection.tsx"; 
+import { CommentSection } from "@/components/CommentSection.tsx";
+import { IdeaFeed } from "./IdeaFeed";
 
 export interface Topic {
   id: number;
@@ -24,12 +25,13 @@ export const TopicItem = ({ topic }: TopicItemProps) => {
   return (
     <Container sx={{ height: "100%", paddingBottom: 4 }}>
       {/* Topic title and description */}
-      <Typography variant="h4" sx={{ marginBottom: 6 }}>
+      {/* <Typography variant="h4" sx={{ marginBottom: 6 }}>
         {topic.title}
       </Typography>
       <Typography sx={{ marginBottom: 6 }}>
         {topic.description}
-      </Typography>
+      </Typography> */}
+      <IdeaFeed />
 
       <Card sx={{ height: "auto", flexDirection: "column", border: "2px solid #ccc" }}>
         <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", gap: 1 }}>
