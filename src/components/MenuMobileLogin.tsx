@@ -8,6 +8,9 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { useLogout } from "@/queries/Auth";
+import { Link as RouterLink } from "react-router-dom";
+import { makeStyles } from '@mui/material';
+
 
 export const MenuMobileLogin = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -37,8 +40,8 @@ export const MenuMobileLogin = () => {
                 slotProps={{
                     paper: {},
                 }}>
-                <MenuItem onClick={logout}>
-                    Profile
+                <MenuItem>
+                    <RouterLink style={{ textDecoration: 'none', color: 'black' }} to="/profile">Profile</RouterLink>
                 </MenuItem><MenuItem onClick={logout}>
                     Logout
                 </MenuItem>
