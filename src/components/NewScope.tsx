@@ -21,7 +21,7 @@ export const NewScope = () => {
   };
   return (
     <>
-      <Button color="secondary" variant="contained" onClick={handleClickOpen}>
+      <Button color="secondary" variant="outlined" onClick={handleClickOpen}>
         New scope
       </Button>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
