@@ -6,11 +6,11 @@ interface NewScopeFormFields {
   description: string;
 }
 
-interface NewTopicFormProps {
+interface CommonFormProps {
   handleClose: () => void;
 }
 
-export const NewTopicForm = ({ handleClose }: NewTopicFormProps) => {
+export const CommonForm = ({ handleClose }: CommonFormProps) => {
   const { handleSubmit, control } = useForm<NewScopeFormFields>();
   const onSubmit: SubmitHandler<NewScopeFormFields> = () => handleClose();
 
@@ -21,12 +21,7 @@ export const NewTopicForm = ({ handleClose }: NewTopicFormProps) => {
           name="title"
           control={control}
           render={({ field }) => (
-            <TextField
-              label="Give a title to the topic"
-              size="small"
-              fullWidth
-              {...field}
-            />
+            <TextField label="Title" size="small" fullWidth {...field} />
           )}
         />
 
@@ -35,7 +30,7 @@ export const NewTopicForm = ({ handleClose }: NewTopicFormProps) => {
           control={control}
           render={({ field }) => (
             <TextField
-              label="Describe the topic"
+              label="Description"
               size="small"
               fullWidth
               multiline

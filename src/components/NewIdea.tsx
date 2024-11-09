@@ -10,7 +10,7 @@ import {
 import { useState } from "react";
 import { CommonForm } from "./CommonForm";
 
-export const NewTopic = () => {
+export const NewIdea = () => {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -21,21 +21,21 @@ export const NewTopic = () => {
   };
   return (
     <>
-      <Button onClick={handleClickOpen} variant="outlined" color="warning">
-        New topic
+      <Button onClick={handleClickOpen} variant="outlined" color="success">
+        New idea
       </Button>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
-        <DialogTitle>Add a new topic</DialogTitle>
+        <DialogTitle>Add a new idea</DialogTitle>
         <DialogContent
           sx={{ gap: 2, display: "flex", flexDirection: "column" }}
         >
           <DialogContentText>
             <Typography>
-              Create a new topic to start a conversation and gather opinions.
+              Share your idea with the community and start a discussion.
             </Typography>
             <Typography>
-              Topics can be about anything, from local issues to global
-              challenges.
+              What is the problem you want to solve? What is your solution? What
+              are the pros and cons?
             </Typography>
           </DialogContentText>
           <CommonForm handleClose={handleClose} />

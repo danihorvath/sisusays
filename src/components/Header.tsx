@@ -2,10 +2,13 @@ import { Box } from "@mui/material";
 import { Menu } from "./Menu";
 import { MenuMobileLogin } from "./MenuMobileLogin";
 import { NewTopic } from "./NewTopic";
+import { useLocation } from "react-router-dom";
+import { NewIdea } from "./NewIdea";
 
 export const HEADER_HEIGHT = 75;
 
 export const Header = () => {
+  const location = useLocation();
   return (
     <Box
       bgcolor="primary.main"
@@ -23,7 +26,8 @@ export const Header = () => {
     >
       <Menu />
       <Box display="flex" gap={1} alignItems="center">
-        <NewTopic />
+        {location.pathname.split("/").length < 3 ? <NewTopic /> : <NewIdea />}
+
         <MenuMobileLogin />
       </Box>
     </Box>

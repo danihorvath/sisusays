@@ -43,7 +43,7 @@ export const ProsAndCons = ({ data }: ProsAndConsProps) => {
             ))}
           </Box>
         </Grid>
-        <Grid size={6} spacing={1}>
+        <Grid size={6}>
           <Typography variant="h6" mb={3}>
             Cons
           </Typography>

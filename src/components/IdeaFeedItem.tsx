@@ -43,10 +43,10 @@ export const IdeaFeedItem = ({ data }: IdeaFeedItemProps) => {
         >
           <Typography variant="h5">
             <Chip
-              label="Topic"
+              label="Idea"
               sx={{ position: "inline", mr: 1 }}
               size="small"
-              color="warning"
+              color="success"
             />
             <Chip
               label="Under Discussion"
