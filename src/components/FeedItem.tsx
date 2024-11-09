@@ -23,8 +23,17 @@ export const FeedItem = ({ data }: FeedItemProps) => {
 
   return (
     <Container sx={{ height: "100%" }}>
+
       <Card
-        sx={{ height: "100%", display: "flex", flexDirection: "column", p: 2 }}
+        elevation={10}
+        sx={{
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          p: 4,
+          marginBottom: 10,
+          borderRadius: 30,
+        }}
       >
         {/* Unimportant Button */}
 
@@ -67,6 +76,6 @@ export const FeedItem = ({ data }: FeedItemProps) => {
           </Button>
         </CardActions>
       </Card>
-    </Container>
+    </Container >
   );
 };

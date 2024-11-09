@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 
 export const Layout = () => {
   return (
-    <Box display="flex" flexDirection="column" height="100dvh" pb={3}>
+    <Box display="flex" flexDirection="column" height="100dvh" >
       <Header />
       <Outlet />
     </Box>

@@ -36,11 +36,10 @@ export const MenuMobileLogin = () => {
                 onClose={handleClose}
                 slotProps={{
                     paper: {},
-                }}
-            >
-                <MenuItem
-                    onClick={logout}
-                >
+                }}>
+                <MenuItem onClick={logout}>
+                    Profile
+                </MenuItem><MenuItem onClick={logout}>
                     Logout
                 </MenuItem>
             </MuiMenu>
