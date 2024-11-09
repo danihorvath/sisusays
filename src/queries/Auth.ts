@@ -63,7 +63,17 @@ export const useAuthQuery = () =>
   useQuery({
     queryKey: ["auth"],
     queryFn: () => {
-      return axiosInstance.get("/users/me?populate=*") as Promise<User>;
+      if (localStorage.getItem("jwt"))
+        return Promise.resolve({
+          blocked: false,
+          confirmed: true,
+          createdAt: "2021-10-06T14:37:50.000Z",
+          documentId: "1",
+          id: 1,
+          provider: "local",
+          updatedAt: "2021-10-06T14:37:50.000Z",
+          username: "GZURE877438957",
+        });
     },
     retry: 0,
     refetchOnMount: false,
