@@ -63,7 +63,6 @@ export const Menu = () => {
         {scopes.map((option) => (
           <MenuItem
             key={option.name}
-            selected={option.name === scopes[0].name}
             onClick={() => {
               navigate(`/${option.slug}`);
               handleClose();
