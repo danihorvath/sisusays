@@ -11,12 +11,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import { scopes } from "@/data";
 import { useNavigate, useParams, Link as RouterLink } from "react-router-dom";
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from "@mui/material/styles";
 
 export const Menu = () => {
   const params = useParams();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -39,7 +39,7 @@ export const Menu = () => {
           </Tooltip>
         </IconButton>
         <Link
-          display={isMobile ? 'none' : 'block'}
+          display={isMobile ? "none" : "block"}
           component={RouterLink}
           to={`/${selectedScope.slug}`}
           color="secondary"

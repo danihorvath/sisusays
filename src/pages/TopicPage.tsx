@@ -1,22 +1,28 @@
-import { useEffect, useState } from "react";
-import { topics } from "@/components/Feed";
-import { TopicItem, Topic } from "@/components/TopicItem";
+import { Box, Container, Typography } from "@mui/material";
+import { useParams } from "react-router-dom";
+import { IdeaFeed } from "@/components/IdeaFeed";
+import { topics } from "@/data";
 
 export const TopicPage = () => {
-  const [topic, setTopic] = useState<Topic | null>(null);
+  const params = useParams();
 
-  useEffect(() => {
-    const pathParts = window.location.pathname.split("/");
-    const id = pathParts[pathParts.length - 1];
-    const topicId = parseInt(id, 10);
+  const selectedTopic = topics.find((v) => v.id.toString() === params.topic);
 
-    const foundTopic = topics.find((topic) => topic.id === topicId);
-    setTopic(foundTopic || null);
-  }, []);
-
-  if (!topic) {
-    return <div>Topic not found!</div>;
-  }
-
-  return <TopicItem topic={topic} />;
+  return (
+    <>
+      <Box bgcolor="#d5d5d5">
+        <Container maxWidth="lg">
+          <Box py={1}>
+            <Typography textAlign="center">
+              Great proposals for:{" "}
+              <Typography fontWeight={600} component="span">
+                {selectedTopic?.title}
+              </Typography>
+            </Typography>
+          </Box>
+        </Container>
+      </Box>
+      <IdeaFeed />
+    </>
+  );
 };

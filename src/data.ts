@@ -5,11 +5,6 @@ export const scopes = [
     slug: "finland",
   },
   {
-    name: "Aleksis  Kivi 🏫",
-    type: "Comprehensive School",
-    slug: "aleksis_kivi",
-  },
-  {
     name: "Uusimaa",
     type: "Regional",
     slug: "uusimaa",
@@ -28,6 +23,11 @@ export const scopes = [
     name: "Tallberginkatu 1 C",
     type: "Apartment",
     slug: "tallberginkatu-1-c",
+  },
+  {
+    name: "Aleksis  Kivi 🏫",
+    type: "Comprehensive School",
+    slug: "aleksis_kivi",
   },
 ];
 

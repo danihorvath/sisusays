@@ -17,8 +17,6 @@ export const Feed = () => {
     <Swiper
       ref={swiperRef}
       slidesPerView={1.2}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
       direction={"vertical"}
       loop
       centeredSlides
@@ -32,5 +30,3 @@ export const Feed = () => {
     </Swiper>
   );
 };
-export { topics };
-
