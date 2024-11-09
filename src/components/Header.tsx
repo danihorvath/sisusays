@@ -6,7 +6,7 @@ import { MenuMobileLogin } from "./MenuMobileLogin"
 import { NewScope } from "./NewScope";
 import { useTheme } from '@mui/material/styles';
 
-export const HEADER_HEIGHT = 100;
+export const HEADER_HEIGHT = 75;
 
 export const Header = () => {
   const { data } = useAuthQuery();
@@ -22,6 +22,7 @@ export const Header = () => {
       px={3}
       py={1}
       height={HEADER_HEIGHT}
+      flexShrink={0}
       alignItems="center"
       justifyContent="space-between"
       display="flex"
