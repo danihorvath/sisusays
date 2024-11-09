@@ -1,6 +1,8 @@
 import { Feed } from "@/components/Feed";
 import { Box, Container, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
+import { IconButton } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 
 export const scopes = [
   {
@@ -68,6 +70,13 @@ export const ScopePage = () => {
 
       </Container>
       <Feed />
+
+      <IconButton color="primary" aria-label="add" sx={{
+
+      }}>
+        <AddIcon />
+      </IconButton>
+
     </>
   );
 };
