@@ -1,6 +1,4 @@
-import { Comment } from "@mui/icons-material";
 import {
-  Button,
   Card,
   CardActions,
   CardContent,
@@ -8,12 +6,14 @@ import {
   Container,
   Typography,
 } from "@mui/material";
+import { ArgumentsDialog } from "./ArgumentsDialog";
 
 interface IdeaFeedItemProps {
   data: {
-    id: number;
     title: string;
     description: string;
+    pro: string[];
+    con: string[];
   };
 }
 
@@ -60,15 +60,7 @@ export const IdeaFeedItem = ({ data }: IdeaFeedItemProps) => {
         </CardContent>
 
         <CardActions sx={{ p: 3 }}>
-          <Button
-            variant="contained"
-            color="primary"
-            startIcon={<Comment />}
-            fullWidth
-            size="large"
-          >
-            See arguments!
-          </Button>
+          <ArgumentsDialog data={data} />
         </CardActions>
       </Card>
     </Container>

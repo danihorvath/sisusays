@@ -4,9 +4,13 @@ import "swiper/css/pagination";
 import { useRef } from "react";
 import { topics } from "@/data";
 import { IdeaFeedItem } from "./IdeaFeedItem";
+import { useParams } from "react-router-dom";
 
 export const IdeaFeed = () => {
   const swiperRef = useRef<SwiperRef>(null);
+  const params = useParams();
+
+  const selectedTopic = topics.find((v) => v.id.toString() === params.topic);
 
   return (
     <Swiper
@@ -17,7 +21,7 @@ export const IdeaFeed = () => {
       centeredSlides
       style={{ width: "100%", height: "100%" }}
     >
-      {topics.map((data, index) => (
+      {selectedTopic?.ideas?.map((data, index) => (
         <SwiperSlide key={index}>
           <IdeaFeedItem data={data} />
         </SwiperSlide>
