@@ -23,13 +23,22 @@ export const useAuthMutation = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (values: AuthRequest) => {
-      return axiosInstance.post<{
-        user: User;
-        jwt: string;
-      }>("/auth/local", values);
+    mutationFn: () => {
+      return Promise.resolve({
+        user: {
+          blocked: false,
+          confirmed: true,
+          createdAt: "2021-10-06T14:37:50.000Z",
+          documentId: "1",
+          id: 1,
+          provider: "local",
+          updatedAt: "2021-10-06T14:37:50.000Z",
+          username: "GZURE877438957",
+        },
+        jwt: "token",
+      });
     },
-    onSuccess({ data }) {
+    onSuccess(data) {
       if (data.user) {
         toast.success("Successfully logged in");
         localStorage.setItem("jwt", data.jwt);
