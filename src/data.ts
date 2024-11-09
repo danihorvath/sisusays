@@ -1,3 +1,36 @@
+export const scopes = [
+  {
+    name: "Finland 🇫🇮",
+    type: "National",
+    slug: "finland",
+  },
+  {
+    name: "Aleksis  Kivi 🏫",
+    type: "Comprehensive School",
+    slug: "aleksis_kivi",
+  },
+  {
+    name: "Uusimaa",
+    type: "Regional",
+    slug: "uusimaa",
+  },
+  {
+    name: "Helsinki",
+    type: "City",
+    slug: "helsinki",
+  },
+  {
+    name: "Kallio",
+    type: "District",
+    slug: "kallio",
+  },
+  {
+    name: "Tallberginkatu 1 C",
+    type: "Apartment",
+    slug: "tallberginkatu-1-c",
+  },
+];
+
 export const topics = [
   {
     id: 1,

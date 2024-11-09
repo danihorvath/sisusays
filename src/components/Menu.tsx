@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
-import { scopes } from "@/pages/ScopePage";
+import { scopes } from "@/data";
 import { useNavigate, useParams, Link as RouterLink } from "react-router-dom";
 import { useTheme } from '@mui/material/styles';
 

@@ -2,34 +2,7 @@ import { Feed } from "@/components/Feed";
 import { Box, Container, IconButton, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import AddIcon from '@mui/icons-material/Add';
-
-export const scopes = [
-  {
-    name: "Finland 🇫🇮",
-    type: "National",
-    slug: "finland",
-  },
-  {
-    name: "Uusimaa",
-    type: "Regional",
-    slug: "uusimaa",
-  },
-  {
-    name: "Helsinki",
-    type: "City",
-    slug: "helsinki",
-  },
-  {
-    name: "Kallio",
-    type: "District",
-    slug: "kallio",
-  },
-  {
-    name: "Tallberginkatu 1 C",
-    type: "Apartment",
-    slug: "tallberginkatu-1-c",
-  },
-];
+import { scopes } from "@/data";
 
 export const ScopePage = () => {
   const params = useParams();
