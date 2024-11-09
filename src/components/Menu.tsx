@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
+import { scopes } from "@/pages/ScopePage";
 
 export const Menu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -19,14 +20,6 @@ export const Menu = () => {
     setAnchorEl(null);
   };
 
-  const options = [
-    "Tallberginkatu 1 C (Apartment building)",
-    "Kallio (District)",
-    "Helsinki (City)",
-    "Uusimaa (Regional)",
-    "Finland (National)",
-  ];
-
   return (
     <>
       <Box display="flex" alignItems="center">
@@ -37,7 +30,7 @@ export const Menu = () => {
         </IconButton>
 
         <Typography variant="h6" component="div">
-          {options[0]}
+          {scopes[0].name}
         </Typography>
       </Box>
       <MuiMenu
@@ -49,13 +42,13 @@ export const Menu = () => {
           paper: {},
         }}
       >
-        {options.map((option) => (
+        {scopes.map((option) => (
           <MenuItem
-            key={option}
-            selected={option === "Pyxis"}
+            key={option.name}
+            selected={option.name === scopes[0].name}
             onClick={handleClose}
           >
-            {option}
+            {option.name}
           </MenuItem>
         ))}
       </MuiMenu>
