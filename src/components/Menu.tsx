@@ -9,8 +9,11 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import { scopes } from "@/pages/ScopePage";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const Menu = () => {
+  const params = useParams();
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -19,6 +22,8 @@ export const Menu = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const selectedScope = scopes.find((v) => v.slug === params.scope);
 
   return (
     <>
@@ -30,7 +35,9 @@ export const Menu = () => {
         </IconButton>
 
         <Typography variant="h6" component="div">
-          {scopes[0].name}
+          {selectedScope
+            ? `${selectedScope.name} (${selectedScope.type})`
+            : "NOT FOUND"}
         </Typography>
       </Box>
       <MuiMenu
@@ -46,9 +53,12 @@ export const Menu = () => {
           <MenuItem
             key={option.name}
             selected={option.name === scopes[0].name}
-            onClick={handleClose}
+            onClick={() => {
+              navigate(`/${option.slug}`);
+              handleClose();
+            }}
           >
-            {option.name}
+            {option.name} ({option.type})
           </MenuItem>
         ))}
       </MuiMenu>

@@ -6,7 +6,9 @@ export const Layout = () => {
   return (
     <Box display="flex" flexDirection="column" minHeight="100dvh">
       <Header />
-      <Outlet />
+      <Box my={3}>
+        <Outlet />
+      </Box>
     </Box>
   );
 };
