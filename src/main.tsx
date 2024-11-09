@@ -1,4 +1,3 @@
-import ToastProvider from "./providers/ToastProvider";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -51,27 +50,25 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <ThemeProvider>
-    <ToastProvider>
-      <QueryProvider>
-        <ConfirmProvider
-          defaultOptions={{
-            confirmationButtonProps: {
-              color: "primary",
-              variant: "contained",
-            },
-            cancellationButtonProps: {
-              color: "primary",
-              variant: "outlined",
-            },
-            dialogProps: { maxWidth: "xs" },
-            title: "Biztos vagy benne?",
-            confirmationText: "Igen",
-            cancellationText: "Mégse",
-          }}
-        >
-          <RouterProvider router={router} />
-        </ConfirmProvider>
-      </QueryProvider>
-    </ToastProvider>
+    <QueryProvider>
+      <ConfirmProvider
+        defaultOptions={{
+          confirmationButtonProps: {
+            color: "primary",
+            variant: "contained",
+          },
+          cancellationButtonProps: {
+            color: "primary",
+            variant: "outlined",
+          },
+          dialogProps: { maxWidth: "xs" },
+          title: "Biztos vagy benne?",
+          confirmationText: "Igen",
+          cancellationText: "Mégse",
+        }}
+      >
+        <RouterProvider router={router} />
+      </ConfirmProvider>
+    </QueryProvider>
   </ThemeProvider>
 );

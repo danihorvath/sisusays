@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import axiosInstance from "@/services/axios";
 
 export interface User {
@@ -40,7 +39,6 @@ export const useAuthMutation = () => {
     },
     onSuccess(data) {
       if (data.user) {
-        toast.success("Successfully logged in");
         localStorage.setItem("jwt", data.jwt);
         queryClient.setQueryData(["auth"], data.user);
       }
