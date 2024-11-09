@@ -1,15 +1,10 @@
 import { createTheme } from "@mui/material/styles";
 
 declare module "@mui/material/styles" {
-  interface TypeBackground {
+  interface Palet {
     default: string;
     paper: string;
     secondary: string;
-  }
-}
-declare module "@mui/material/Chip" {
-  interface ChipPropsVariantOverrides {
-    translucent: true;
   }
 }
 
@@ -26,7 +21,6 @@ export const theme = createTheme({
     background: {
       default: "#FFFFFF",
       paper: "#F7F7F7",
-      secondary: "#F7F7F7",
     },
   },
 });

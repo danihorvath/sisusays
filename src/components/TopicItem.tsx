@@ -9,11 +9,7 @@ export interface Topic {
   description: string;
 }
 
-interface TopicItemProps {
-  topic: Topic;
-}
-
-export const TopicItem = ({ topic }: TopicItemProps) => {
+export const TopicItem = () => {
   const [comments, setComments] = useState<string[]>([]);
 
   const addComment = (comment: string) => {
@@ -33,8 +29,16 @@ export const TopicItem = ({ topic }: TopicItemProps) => {
       </Typography> */}
       <IdeaFeed />
 
-      <Card sx={{ height: "auto", flexDirection: "column", border: "2px solid #ccc" }}>
-        <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", gap: 1 }}>
+      <Card
+        sx={{
+          height: "auto",
+          flexDirection: "column",
+          border: "2px solid #ccc",
+        }}
+      >
+        <CardContent
+          sx={{ flexGrow: 1, display: "flex", flexDirection: "column", gap: 1 }}
+        >
           {/* Comment Section */}
           <CommentSection comments={comments} addComment={addComment} />
         </CardContent>

@@ -49,11 +49,13 @@ export const Feed = () => {
   return (
     <Swiper
       ref={swiperRef}
-      slidesPerView={1}
+      slidesPerView={1.2}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
       direction={"vertical"}
-      style={{ height: "100%" }}
+      loop
+      centeredSlides
+      style={{ width: "100%", height: "100%" }}
     >
       {topics.map((data, index) => (
         <SwiperSlide key={index}>

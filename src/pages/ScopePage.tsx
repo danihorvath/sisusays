@@ -1,8 +1,6 @@
 import { Feed } from "@/components/Feed";
 import { Box, Container, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
-import { IconButton } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
 
 export const scopes = [
   {
@@ -40,43 +38,19 @@ export const ScopePage = () => {
 
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          position: "relative",
-          bottom: 16,
-          alignItems: "center",
-          background: "lightgrey",
-          borderBottom: "2px solid grey"
-        }}>
-        <Typography justifySelf="center" variant="subtitle1" paddingLeft={2}>Democracy of its best in:</Typography>
-        <Typography justifySelf="center" variant="h6" ml={1}>{selectedScope.name}</Typography>
+      <Box bgcolor="#d5d5d5">
+        <Container maxWidth="lg">
+          <Box py={1}>
+            <Typography textAlign="center">
+              Democracy of its best in:{" "}
+              <Typography fontWeight={600} component="span">
+                {selectedScope.name}
+              </Typography>
+            </Typography>
+          </Box>
+        </Container>
       </Box>
-      <Container sx={{ mb: 3 }}>
-        {/* title */}
-        <Box sx={{
-          display: "flex",
-          justifyContent: "center",
-          justifySelf: "center",
-          width: 200,
-          borderRadius: 20,
-          background: "#fe920094",
-          border: "1px solid #fe9700"
-        }}>
-          <Typography variant="h3" sx={{
-            color: "#fe9700",
-          }}>Scope</Typography>
-        </Box>
-
-      </Container>
       <Feed />
-
-      <IconButton color="primary" aria-label="add" sx={{
-
-      }}>
-        <AddIcon />
-      </IconButton>
-
     </>
   );
 };

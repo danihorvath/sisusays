@@ -5,13 +5,12 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-  MenuItem,
   Typography,
 } from "@mui/material";
 import { useState } from "react";
 import { RegisterScopeForm } from "./RegisterScopeForm";
 
-export const NewScope = () => {
+export const NewTopic = () => {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -22,7 +21,9 @@ export const NewScope = () => {
   };
   return (
     <>
-      <MenuItem onClick={handleClickOpen}>New scope</MenuItem>
+      <Button onClick={handleClickOpen} variant="contained" color="secondary">
+        New topic
+      </Button>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
         <DialogTitle>Register a new scope</DialogTitle>
         <DialogContent

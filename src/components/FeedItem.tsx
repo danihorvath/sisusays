@@ -4,8 +4,11 @@ import {
   Card,
   CardActions,
   CardContent,
+  Chip,
   Container,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -21,9 +24,15 @@ interface FeedItemProps {
 export const FeedItem = ({ data, nextSlide }: FeedItemProps) => {
   const navigate = useNavigate();
   const params = useParams();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
 
   return (
-    <Container sx={{ width: "100%", height: "100%", py: 3 }} disableGutters>
+    <Container
+      maxWidth="md"
+      sx={{ width: "100%", height: "100%", py: 3 }}
+      disableGutters
+    >
       <Card
         sx={{
           height: "100%",
@@ -41,7 +50,19 @@ export const FeedItem = ({ data, nextSlide }: FeedItemProps) => {
             gap: 1,
           }}
         >
-          <Typography variant="h5" lineHeight={1}>
+          <Typography variant="h5">
+            <Chip
+              label="Topic"
+              sx={{ position: "inline", mr: 1 }}
+              size="small"
+              color="warning"
+            />
+            <Chip
+              label="Under Discussion"
+              sx={{ position: "inline", mr: 1 }}
+              size="small"
+              color="primary"
+            />
             {data.title}
           </Typography>
           <Typography>{data.description}</Typography>
@@ -56,7 +77,7 @@ export const FeedItem = ({ data, nextSlide }: FeedItemProps) => {
             size="large"
             onClick={nextSlide}
           >
-            Unimportant
+            {isMobile && "Not interested"}
           </Button>
           <Button
             variant="contained"
@@ -68,7 +89,7 @@ export const FeedItem = ({ data, nextSlide }: FeedItemProps) => {
               navigate(`/${params.scope ?? "finland"}/${data.id}`);
             }}
           >
-            Important
+            {isMobile && "Go to discussion"}
           </Button>
         </CardActions>
       </Card>
