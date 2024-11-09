@@ -15,16 +15,16 @@ interface FeedItemProps {
     title: string;
     description: string;
   };
+  nextSlide?: () => void;
 }
 
-export const FeedItem = ({ data }: FeedItemProps) => {
+export const FeedItem = ({ data, nextSlide }: FeedItemProps) => {
   const navigate = useNavigate();
   const params = useParams();
 
   return (
-    <Container sx={{ height: "100%", py: 3 }}>
+    <Container sx={{ width: "100%", height: "100%", py: 3 }} disableGutters>
       <Card
-        elevation={8}
         sx={{
           height: "100%",
           display: "flex",
@@ -54,6 +54,7 @@ export const FeedItem = ({ data }: FeedItemProps) => {
             startIcon={<ThumbDown />}
             fullWidth
             size="large"
+            onClick={nextSlide}
           >
             Unimportant
           </Button>

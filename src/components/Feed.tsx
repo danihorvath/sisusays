@@ -1,7 +1,8 @@
 import { FeedItem } from "./FeedItem";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useCallback, useRef } from "react";
 
 export const topics = [
   {
@@ -38,8 +39,16 @@ export const topics = [
 ];
 
 export const Feed = () => {
+  const swiperRef = useRef<SwiperRef>(null);
+
+  const handleNext = useCallback(() => {
+    if (!swiperRef.current) return;
+    swiperRef.current.swiper.slideNext();
+  }, []);
+
   return (
     <Swiper
+      ref={swiperRef}
       slidesPerView={1}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
@@ -48,7 +57,7 @@ export const Feed = () => {
     >
       {topics.map((data, index) => (
         <SwiperSlide key={index}>
-          <FeedItem data={data} />
+          <FeedItem data={data} nextSlide={handleNext} />
         </SwiperSlide>
       ))}
     </Swiper>
