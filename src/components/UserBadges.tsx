@@ -16,7 +16,7 @@ const UserBadges: React.FC = () => {
       
       <Box display="flex" alignItems="center" gap={2} sx={{ backgroundColor: '#ffffff'}}>
         {badges.map((badge, index) => (
-          <Avatar key={index} sx={{ width: 100, height: 100, fontSize: 40, backgroundColor: '#deebfa' }}>
+          <Avatar key={index} sx={{ width: 70, height: 70, fontSize: 30, backgroundColor: '#deebfa' }}>
             {badge}
           </Avatar>
         ))}
