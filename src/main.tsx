@@ -12,6 +12,7 @@ import Login from "@/pages/Login";
 import AuthProvider from "@/providers/AuthProvider";
 import QueryProvider from "@/providers/QueryProvider";
 import ThemeProvider from "@/providers/ThemeProvider";
+import UserProfile from "@/pages/UserProfile";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
             path: "/:page?/:id?",
             element: <Home />,
           },
+          {
+            path: "/profile",
+            element: <UserProfile />,
+          }
         ],
       },
       {

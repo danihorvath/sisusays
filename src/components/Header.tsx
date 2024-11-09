@@ -34,7 +34,7 @@ export const Header = () => {
           </Button>
 
           <Box display="flex" alignItems="center" gap={1}>
-            <Avatar />
+          <RouterLink to="/profile"><Avatar /></RouterLink>
           </Box>
         </Box>
       )}
