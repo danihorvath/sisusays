@@ -44,21 +44,20 @@ const Login = () => {
                   <Logo height={160} />
                 </Box>
                 <Typography variant="h5">
-                  Welcome to the Finland Citizens’ Voice – A New Way to Shape
-                  Our Future!
+                  Welcome to SisuSays – Empowerig the Growth of a Digital Democracy!
                 </Typography>
                 <Typography variant="caption">
                   In Finland, you have the power to make decisions that affect
-                  your community, your city, and even the whole country. Finland
-                  Citizens’ Voice is a platform where you can join discussions
+                  your community, your city, and even the whole country. SisuSays
+                  is a platform where you can join discussions
                   on important issues, vote on polls, and help guide the future
                   of our society. Whether it’s about climate action, housing,
                   education, or local issues – your voice matters.
                 </Typography>
 
                 <Typography variant="caption" mb={3}>
-                  Ready to get started? Log in with the unique ID from your
-                  letter and help build a better Finland for everyone!
+                  Ready to get started? Log in with the unique ID
+                  and help build a better Finland for everyone!
                 </Typography>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
