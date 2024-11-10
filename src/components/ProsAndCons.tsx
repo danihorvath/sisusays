@@ -5,7 +5,7 @@ import {
   Container,
   Divider,
   FormControlLabel,
-  Grid2 as Grid,
+  Grid,
   Radio,
   RadioGroup,
   TextField,
@@ -24,6 +24,24 @@ interface ProsAndConsProps {
 
 export const ProsAndCons = ({ data }: ProsAndConsProps) => {
   const [value, setValue] = useState("");
+  const [selectedPros, setSelectedPros] = useState<number[]>([]);
+  const [selectedCons, setSelectedCons] = useState<number[]>([]);
+
+  const handleProClick = (index: number) => {
+    setSelectedPros((prevSelected) =>
+      prevSelected.includes(index)
+        ? prevSelected.filter((i) => i !== index) // Deselect if already selected
+        : [...prevSelected, index] // Select if not selected
+    );
+  };
+
+  const handleConClick = (index: number) => {
+    setSelectedCons((prevSelected) =>
+      prevSelected.includes(index)
+        ? prevSelected.filter((i) => i !== index) // Deselect if already selected
+        : [...prevSelected, index] // Select if not selected
+    );
+  };
 
   return (
     <Container
@@ -31,25 +49,55 @@ export const ProsAndCons = ({ data }: ProsAndConsProps) => {
       sx={{ my: 3, display: "flex", flexDirection: "column", gap: 5 }}
     >
       <Grid container spacing={2}>
-        <Grid size={6}>
+        <Grid item xs={6}>
           <Typography variant="h6" mb={3}>
             Pros
           </Typography>
           <Box display="flex" flexDirection="column" gap={1}>
             {data.pro.map((pro, index) => (
-              <Alert key={index} icon={false} severity="success">
+              <Alert
+                key={index}
+                icon={false}
+                severity="success"
+                onClick={() => handleProClick(index)}
+                sx={{
+                  cursor: "pointer",
+                  backgroundColor: selectedPros.includes(index)
+                    ? "#c8e6c9" // Darker green if selected
+                    : "#e8f5e9", // Default lighter green
+                  border: selectedPros.includes(index)
+                    ? "2px solid #4caf50"
+                    : "1px solid #c8e6c9",
+                  transition: "background-color 0.3s ease, border 0.3s ease",
+                }}
+              >
                 {pro}
               </Alert>
             ))}
           </Box>
         </Grid>
-        <Grid size={6}>
+        <Grid item xs={6}>
           <Typography variant="h6" mb={3}>
             Cons
           </Typography>
           <Box display="flex" flexDirection="column" gap={1}>
             {data.con.map((con, index) => (
-              <Alert key={index} icon={false} severity="error">
+              <Alert
+                key={index}
+                icon={false}
+                severity="error"
+                onClick={() => handleConClick(index)}
+                sx={{
+                  cursor: "pointer",
+                  backgroundColor: selectedCons.includes(index)
+                    ? "#ffcdd2" // Darker red if selected
+                    : "#ffebee", // Default lighter red
+                  border: selectedCons.includes(index)
+                    ? "2px solid #f44336"
+                    : "1px solid #ffcdd2",
+                  transition: "background-color 0.3s ease, border 0.3s ease",
+                }}
+              >
                 {con}
               </Alert>
             ))}
