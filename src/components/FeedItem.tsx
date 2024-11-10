@@ -11,7 +11,9 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
 
 interface FeedItemProps {
   data: {
@@ -28,13 +30,39 @@ export const FeedItem = ({ data, nextSlide }: FeedItemProps) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
 
+  const [isAnimating, setIsAnimating] = useState(false);
+  const animateRight = () => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setIsAnimating(false);
+      navigate(`/${params.scope ?? "finland"}/${data.id}`);
+    }, 400);
+  };
+  const moveRightStyle: React.CSSProperties = {
+    animation: isAnimating ? 'moveRight 2s forwards' : 'none',
+  };
+  const keyframes = `
+    @keyframes moveRight {
+      0% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+  `;
+
   return (
     <Container
       maxWidth="md"
       sx={{ width: "100%", height: "100%", py: 3 }}
       disableGutters
     >
-      <Card
+      {/* style for moving */}
+      <style>{keyframes}</style>
+      <Card style={moveRightStyle}
         sx={{
           height: "100%",
           display: "flex",
@@ -65,6 +93,7 @@ export const FeedItem = ({ data, nextSlide }: FeedItemProps) => {
           </Box>
           <Typography variant="h4">{data.title}</Typography>
           <Typography>{data.description}</Typography>
+          {isAnimating && <div className="fade-out">Navigating...</div>}
         </CardContent>
 
         <CardActions sx={{ p: 3 }}>
@@ -86,7 +115,8 @@ export const FeedItem = ({ data, nextSlide }: FeedItemProps) => {
             fullWidth
             size="large"
             onClick={() => {
-              navigate(`/${params.scope ?? "finland"}/${data.id}`);
+              animateRight();
+
             }}
             sx={{ height: 70, borderRadius: 5 }}
           >
