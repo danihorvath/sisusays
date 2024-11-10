@@ -28,7 +28,7 @@ export const Menu = () => {
   };
 
   const selectedScope =
-    scopes.find((v) => v.slug === params.scope) || scopes[0];
+    scopes.find((v) => v.slug === params.scope) || scopes[5];
 
   return (
     <>
