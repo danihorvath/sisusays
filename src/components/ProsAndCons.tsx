@@ -53,7 +53,7 @@ export const ProsAndCons = ({ data }: ProsAndConsProps) => {
           <Typography variant="h6" mb={3}>
             Pros
           </Typography>
-          <Box display="flex" flexDirection="column" gap={1}>
+          <Box display="flex" flexDirection="column" gap={2}>
             {data.pro.map((pro, index) => (
               <Alert
                 key={index}
@@ -67,7 +67,7 @@ export const ProsAndCons = ({ data }: ProsAndConsProps) => {
                     : "#e8f5e9", // Default lighter green
                   border: selectedPros.includes(index)
                     ? "2px solid #4caf50"
-                    : "1px solid #c8e6c9",
+                    : "2px solid #c8e6c9",
                   transition: "background-color 0.3s ease, border 0.3s ease",
                 }}
               >
@@ -80,7 +80,7 @@ export const ProsAndCons = ({ data }: ProsAndConsProps) => {
           <Typography variant="h6" mb={3}>
             Cons
           </Typography>
-          <Box display="flex" flexDirection="column" gap={1}>
+          <Box display="flex" flexDirection="column" gap={2}>
             {data.con.map((con, index) => (
               <Alert
                 key={index}
@@ -94,7 +94,7 @@ export const ProsAndCons = ({ data }: ProsAndConsProps) => {
                     : "#ffebee", // Default lighter red
                   border: selectedCons.includes(index)
                     ? "2px solid #f44336"
-                    : "1px solid #ffcdd2",
+                    : "2px solid #ffcdd2",
                   transition: "background-color 0.3s ease, border 0.3s ease",
                 }}
               >
