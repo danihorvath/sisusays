@@ -43,14 +43,17 @@ export const ProsAndCons = ({ data }: ProsAndConsProps) => {
 
   const handleSubmit = () => {
     if (value.trim()) {
-      selectedType === "pro"
-        ? setPros((prev) => [...prev, value])
-        : setCons((prev) => [...prev, value]);
+      if (selectedType === "pro") setPros((prev) => [...prev, value]);
+      else setCons((prev) => [...prev, value]);
       setValue("");
     }
   };
 
-  const alertStyles = (isSelected: boolean, selectedColor: string, defaultColor: string) => ({
+  const alertStyles = (
+    isSelected: boolean,
+    selectedColor: string,
+    defaultColor: string
+  ) => ({
     cursor: "pointer",
     backgroundColor: isSelected ? selectedColor : defaultColor,
     border: `2px solid ${isSelected ? selectedColor : defaultColor}`,
