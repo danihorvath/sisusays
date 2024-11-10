@@ -15,7 +15,7 @@ const MenuBar: React.FC = () => {
 
   return (
     <div>
-      {}
+      { }
       <AppBar position="static" color="default">
         <Tabs
           value={selectedTab}

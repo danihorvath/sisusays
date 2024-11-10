@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Avatar, Button } from '@mui/material';
 
 const UserBadges: React.FC = () => {
-  
+
   const badges = ["🇫🇮", "🤝", "🌱", "🏆"];
 
   return (
@@ -13,10 +13,10 @@ const UserBadges: React.FC = () => {
           See All
         </Button>
       </Box>
-      
-      <Box display="flex" alignItems="center" gap={2} sx={{ backgroundColor: '#ffffff'}}>
+
+      <Box display="flex" alignItems="center" gap={1} sx={{ backgroundColor: '#ffffff' }}>
         {badges.map((badge, index) => (
-          <Avatar key={index} sx={{ width: 70, height: 70, fontSize: 30, backgroundColor: '#deebfa' }}>
+          <Avatar key={index} sx={{ width: 65, height: 65, fontSize: 30, backgroundColor: '#deebfa' }}>
             {badge}
           </Avatar>
         ))}
