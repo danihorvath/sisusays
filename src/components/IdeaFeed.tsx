@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { topics } from "@/data";
 import { IdeaFeedItem } from "./IdeaFeedItem";
 import { useParams } from "react-router-dom";
+import { Box } from "@mui/material";
 
 export const IdeaFeed = () => {
   const swiperRef = useRef<SwiperRef>(null);
@@ -13,18 +14,32 @@ export const IdeaFeed = () => {
   const selectedTopic = topics.find((v) => v.id.toString() === params.topic);
 
   return (
-    <Swiper
-      ref={swiperRef}
-      slidesPerView={1.1}
-      direction={"vertical"}
-      loop
-      style={{ width: "100%", height: "100%" }}
+    <Box
+      sx={{
+        width: "100%",
+        height: "100%",
+        ".swiper-slide": {
+          opacity: 0.5,
+          transition: "opacity 0.5s",
+        },
+        ".swiper-slide-active": {
+          opacity: 1,
+        },
+      }}
     >
-      {selectedTopic?.ideas?.map((data, index) => (
-        <SwiperSlide key={index}>
-          <IdeaFeedItem data={data} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+      <Swiper
+        ref={swiperRef}
+        slidesPerView={1.8}
+        direction={"vertical"}
+        loop
+        style={{ width: "100%", height: "100%" }}
+      >
+        {selectedTopic?.ideas?.map((data, index) => (
+          <SwiperSlide key={index}>
+            <IdeaFeedItem data={data} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Box>
   );
 };
